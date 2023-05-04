@@ -73,4 +73,9 @@ export const renderForm = (form: HTMLFormElement, questions: Question[]) => {
       form.appendChild(questionElement)
     }
   })
+
+  const button = document.createElement('button')
+  button.setAttribute('type', 'submit')
+  button.textContent = 'Submit'
+  form.appendChild(button)
 }
