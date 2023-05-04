@@ -10,9 +10,23 @@ export enum InputType {
   RADIO = 'radio',
 }
 
+export enum validationTypes {
+  REQUIRED = 'required',
+  PATTERN = 'pattern',
+  MIN = 'min',
+  MAX = 'max',
+  MIN_LENGTH = 'min_length',
+  ACCEPT = 'accept',
+}
+
 export interface InputObject {
   create: (question: Question, option?: InputOption) => HTMLElement
   reset: (form: HTMLFormElement, name: string) => void
+}
+
+export interface ValidationObject {
+  message: (question: Question) => string
+  validate: (formData: FormData, question: Question) => Boolean
 }
 
 export interface InputOption {
