@@ -1,0 +1,28 @@
+{
+  "name": "handle-forms",
+  "version": "1.0.0",
+  "description": "Handle forms",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "forms"
+  ],
+  "author": "Andrés Hortua <fandresh7@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/fandresh7/handle-forms",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fandresh7/handle-forms"
+  },
+  "files": [
+    "/lib"
+  ],
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  }
+}
