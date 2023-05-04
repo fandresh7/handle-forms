@@ -40,6 +40,7 @@ export interface Question {
   show?: {
     name: string
     values: string[]
+    checked?: boolean
     check: 'some' | 'every'
   }
 }
