@@ -42,9 +42,9 @@ export const handleChanges = (event: Event, questions: Question[], form: HTMLFor
       parent?.classList.remove('d-none')
     } else {
       parent?.classList.add('d-none')
+      inputs[type].reset(form, inputElement.name)
     }
 
-    inputs[type].reset(form, inputElement.name)
     checkQuestions(inputElement)
   }
 
