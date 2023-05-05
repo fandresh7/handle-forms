@@ -20,7 +20,7 @@ module.exports = {
   output: {
     filename: 'index.min.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'myPackage',
+    library: 'handleForms',
     libraryTarget: 'umd',
   },
   optimization: {
