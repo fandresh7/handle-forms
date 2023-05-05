@@ -2,9 +2,10 @@
   "name": "handle-forms",
   "version": "1.0.0",
   "description": "Handle forms",
-  "main": "lib/index.js",
+  "main": "dist/index.min.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "webpack"
   },
   "keywords": [
     "javascript",
@@ -19,10 +20,14 @@
     "url": "https://github.com/fandresh7/handle-forms"
   },
   "files": [
-    "/lib"
+    "/dist"
   ],
   "devDependencies": {
     "prettier": "^2.8.8",
-    "typescript": "^5.0.4"
+    "terser-webpack-plugin": "^5.3.7",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.82.0",
+    "webpack-cli": "^5.0.2"
   }
 }
