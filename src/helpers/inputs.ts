@@ -3,6 +3,8 @@ import { InputObject, InputOption, InputType, Question } from '../types'
 const getInputHtml = ({ name, type, placeholder, multiple }: Question) => {
   const input = document.createElement('input')
 
+  type = type === InputType.SINGLE_CHECKBOX ? InputType.CHECKBOX : type
+
   input.setAttribute('type', type)
   input.setAttribute('name', name)
   input.setAttribute('id', name)

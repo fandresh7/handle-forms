@@ -4,7 +4,7 @@ export enum InputType {
   NUMBER = 'number',
   PASSWORD = 'password',
   TEXTAREA = 'textarea',
-  SINGLE_CHECKBOX = 'checkbox',
+  SINGLE_CHECKBOX = 'single_checkbox',
   CHECKBOX = 'checkbox',
   FILE = 'file',
   RADIO = 'radio',

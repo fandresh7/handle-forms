@@ -1,11 +1,17 @@
-import { Question, validationTypes } from '../types'
+import { InputType, Question, validationTypes } from '../types'
 
 export const validations = {
   [validationTypes.REQUIRED]: {
     message: (question: Question) => `The field ${question.label} is required.`,
     validate: (formData: FormData, question: Question) => {
       const answer = formData.get(question.name)
+
       if (!question.validations.required) return true
+
+      if (question.type === InputType.SINGLE_CHECKBOX) {
+        return answer != null
+      }
+
       return !(answer instanceof File && answer.name === '') && !(typeof answer === 'string' && answer.trim() === '') && !(answer == null)
     },
   },
