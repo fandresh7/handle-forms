@@ -29,7 +29,8 @@ export const validateForm = (form: HTMLFormElement, questions: Question[]) => {
   return questionsWithErrors.filter((item) => item != null)
 }
 
-export const getValidationMessages = (questionsWithError: Question[]) => {
+export const getValidationMessages = (form: HTMLFormElement, questionsWithError: Question[]) => {
+  const formData = new FormData(form)
   const errors = {} as Record<string, string[]>
 
   questionsWithError.forEach((question) => {
@@ -38,8 +39,11 @@ export const getValidationMessages = (questionsWithError: Question[]) => {
     const entries = Object.entries(question.validations)
     entries.forEach((entry) => {
       const type = entry[0] as validationTypes
-      const message = validations[type].message(question)
-      messages.push(message)
+      const validation = validations[type].validate(formData, question)
+      if (!validation) {
+        const message = validations[type].message(question)
+        messages.push(message)
+      }
     })
 
     errors[question.name] = messages
